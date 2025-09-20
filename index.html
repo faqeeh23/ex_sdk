@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <header>
+        <h1>Brand title</h1>
+        <button id="btn_theme">Dark</button>
+    </header>
+
+    <div id="control-bar">
+        <input id="searchBox" type="text" placeholder="Search products...">
+        <button class="filter active" data-category="all">All</button>
+        <button class="filter" data-category="electronics">Electronics</button>
+        <button class="filter" data-category="books">Books</button>
+        <button class="filter" data-category="clothing">Clothing</button>
+    </div>
+    <div id="output"></div>
+    <main>
+        <div id="cards-container">
+            <div class="move" id="prev" aria-label="Scroll left" role="button" tabindex="0">‹</div>
+        
+            <div class="cards-viewport" id="viewport" aria-label="Product cards">
+                <div class="cards" id="cards"></div>
+            </div>
+        
+            <div class="move" id="next" aria-label="Scroll right" role="button" tabindex="0">›</div>
+        </div>
+    <!-- Accessible Modal -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal__backdrop" data-close></div>
+
+        <div
+            class="modal__dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            aria-describedby="modal-desc"
+        >
+            <button class="modal__close" type="button" aria-label="Close" data-close>✕</button>
+
+            <img id="modal-img" alt="" class="modal__img">
+            <h2 id="modal-title" class="modal__title"></h2>
+            <p id="modal-desc" class="modal__desc"></p>
+            <p class="modal__meta">
+            <span id="modal-cat"></span>
+            <span id="modal-price"></span>
+            </p>
+        </div>
+</div>
+    </main>
+    <footer id="footer">
+        <span>Subscribe to our newsletter:</span>
+        <p>All raghit seved &copy </p>
+        <form id="newsletterForm">
+            <input type="email" id="email" placeholder="Write your email" required>
+            <button type="submit">Subscribe</button>
+            <div class="msg" id="msg" aria-live="polite"></div>
+        </form>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
